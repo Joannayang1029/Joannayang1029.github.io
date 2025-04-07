@@ -19,7 +19,7 @@ body {
 
     .form-grid {
         grid-template-columns: 1fr !important;   /* 在小螢幕上設置單欄佈局 */
-        gap: 12px; /* 調整小螢幕上的間距 */
+        gap: 0px; /* 調整小螢幕上的間距 */
     }
 
     /* 讓內部元素在小螢幕上以單欄方式排列 */
@@ -56,30 +56,45 @@ h1 {
     gap: 20px; /* 設定欄與欄、列與列的間距 */
     width: 100%; /* 確保表單寬度填滿父容器 */
     margin: 0 auto; /* 讓表單置中 */
+    
 }
 
 .form-group {
-    margin-bottom: 20px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
 }
 
-.form-group.inline {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+.form-group-inline{
+    padding:12px;
 }
 
-label {
-    margin-bottom: 6px;
+label{
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+
+}
+
+label[for="username"],
+label[for="email"],
+label[for="password"],
+label[for="confirm-password"],
+label[for="birthday"],
+label[for="bio"]{
+    margin-bottom: 8px;
     font-weight: bold;
     color: #333;
     cursor: pointer;
 }
 
+
+
 input[type="text"],
 input[type="email"],
 input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -119,14 +134,16 @@ textarea:focus{
 .selection {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    box-sizing: border-box;
+
 }
 
 .checkbox-label,
 .radio-label {
+    padding: 8px;
     display: flex;
     align-items: center;
-    gap: 6px;
+
 }
 
 button {
@@ -148,6 +165,8 @@ button:hover {
 }
 
 textarea{
+    width: 100%;
+    box-sizing: border-box;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 10px;
